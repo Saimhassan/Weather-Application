@@ -9,6 +9,8 @@ import android.Manifest;
 import android.os.Bundle;
 import android.os.Looper;
 
+import com.example.weatherapplication.Adapter.ViewPagerAdapter;
+import com.example.weatherapplication.Common.Common;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -77,9 +79,22 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public void onLocationResult(LocationResult locationResult) {
                super.onLocationResult(locationResult);
+
+               Common.current_location = locationResult.getLastLocation();
+               viewPager = (ViewPager)findViewById(R.id.view_pager);
+               setupViewPager(viewPager);
+               tabLayout = (TabLayout)findViewById(R.id.tabs);
+               tabLayout.setupWithViewPager(viewPager);
            }
        };
     }
+
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(TodayWeatherFragment.getInstance(),"Today");
+        viewPager.setAdapter(adapter);
+    }
+
 
     private void buildLocationRequest() {
            locationRequest = new LocationRequest();
