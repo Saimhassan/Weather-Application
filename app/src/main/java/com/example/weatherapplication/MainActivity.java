@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.Manifest;
 import android.os.Bundle;
 import android.os.Looper;
+import android.util.Log;
 
 import com.example.weatherapplication.Adapter.ViewPagerAdapter;
 import com.example.weatherapplication.Common.Common;
@@ -15,6 +16,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.karumi.dexter.Dexter;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                             buildLocationRequest();
                             buildLocationCallback();
 
+                            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
                             fusedLocationProviderClient.requestLocationUpdates(locationRequest,locationCallback, Looper.myLooper());
                         }
                     }
@@ -85,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                setupViewPager(viewPager);
                tabLayout = (TabLayout)findViewById(R.id.tabs);
                tabLayout.setupWithViewPager(viewPager);
+
+               Log.d("Location",locationResult.getLastLocation().getLatitude()+"/"+locationResult.getLastLocation().getLongitude());
            }
        };
     }
