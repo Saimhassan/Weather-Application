@@ -1,5 +1,7 @@
 package com.example.weatherapplication.Model;
 
+import androidx.annotation.NonNull;
+
 public class Coord {
     private double lon;
     private double lat;
@@ -21,5 +23,12 @@ public class Coord {
 
     public void setLat(double lat) {
         this.lat = lat;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return new StringBuilder("[").append(this.lat).append(',').append(this.lon).append(']').toString();
+
     }
 }
