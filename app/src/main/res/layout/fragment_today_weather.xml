@@ -78,9 +78,135 @@
             android:layout_height="wrap_content">
 
             <TableRow
+             android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:text="Wind"
+                    android:background="@drawable/cell"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:text="Speed: 1 Deg: 1"
+                    android:id="@+id/txt_wind"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
 
 
-                ></TableRow>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:text="Pressure"
+                    android:background="@drawable/cell"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:text="1074: hpa"
+                    android:id="@+id/txt_pressure"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:text="Humadity"
+                    android:background="@drawable/cell"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:text="100%"
+                    android:id="@+id/txt_humadity"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:text="Sunrise"
+                    android:background="@drawable/cell"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:text="11:00"
+                    android:id="@+id/txt_sunrise"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:text="Sunset"
+                    android:background="@drawable/cell"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:text="18:00"
+                    android:id="@+id/txt_sunset"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:text="Geo Coordinates"
+                    android:background="@drawable/cell"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:text="[32.0,-81.0]"
+                    android:id="@+id/txt_geo_coordinates"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+
+            </TableRow>
 
 
         </TableLayout>
