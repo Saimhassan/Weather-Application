@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weatherapplication.Common.Common;
 import com.example.weatherapplication.Model.WeatherForecastResult;
 import com.example.weatherapplication.R;
 import com.squareup.picasso.Picasso;
@@ -39,6 +40,15 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
         Picasso.get().load(new StringBuilder("https://openweathermap.org/img/wn/")
                 .append(weatherForecastResult.list.get(position).weather.get(0).getIcon())
                 .append(".png").toString()).into(holder.img_weather);
+
+        holder.txt_date_time.setText(new StringBuilder(Common.convertUnitToDate(weatherForecastResult
+        .list.get(position).dt)));
+
+        holder.txt_description.setText(new StringBuilder(weatherForecastResult.list.get(position)
+        .weather.get(0).getDescription()));
+
+        holder.txt_temperature.setText(new StringBuilder(String.valueOf(weatherForecastResult.list.get(position)
+                .main.getTemp())).append("°C"));
     }
 
     @Override

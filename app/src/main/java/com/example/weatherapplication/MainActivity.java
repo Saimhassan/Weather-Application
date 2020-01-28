@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                Common.current_location = locationResult.getLastLocation();
                viewPager = (ViewPager)findViewById(R.id.view_pager);
                setupViewPager(viewPager);
+
                tabLayout = (TabLayout)findViewById(R.id.tabs);
                tabLayout.setupWithViewPager(viewPager);
 
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(TodayWeatherFragment.getInstance(),"Today");
+        adapter.addFragment(ForecastFragment.getInstance(),"5 DAYS");
         viewPager.setAdapter(adapter);
     }
 
