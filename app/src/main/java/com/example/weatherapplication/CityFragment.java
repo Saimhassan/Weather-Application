@@ -17,6 +17,7 @@ public class CityFragment extends Fragment {
 
     public CityFragment() {
         // Required empty public constructor
+
     }
 
 
